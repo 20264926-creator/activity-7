@@ -1,234 +1,178 @@
-
-HTML
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Portfolio - Gallery</title>
+    <title>Contact - Bacala's Creatives</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
             font-family: Arial, sans-serif;
-            background-color: #d8f3dc; /* Mint Green Background */
-            color: #333333;
-        }
-
-        /* Stacked Header Layout */
-        header {
-            background-color: #3a3a3a;
+            background-color: #f2e4e0;
             color: #ffffff;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            min-height: 100vh;
         }
 
-        /* Brand Logo Section at Top */
+        header {
+            background-color: #c98a7e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
         .brand-container {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 20px 0;
+            gap: 10px;
+            padding: 15px 0 10px 0;
         }
 
         .brand-container img {
-            width: 35px;
-            height: 35px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             object-fit: cover;
         }
 
         .brand-container span {
             font-weight: bold;
-            font-size: 1.2rem;
-            letter-spacing: 1.5px;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            color: #ffffff;
         }
 
-        /* Navigation Bar underneath */
         nav {
-            width: 100%;
-            background-color: #2b2b2b;
             display: flex;
-            justify-content: center;
-            border-top: 1px solid #4a4a4a;
+            gap: 40px;
+            padding-top: 5px;
         }
 
         nav a {
-            color: #b0b0b0;
+            color: #ffffff;
             text-decoration: none;
-            padding: 14px 30px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: background 0.3s;
         }
 
-        nav a:hover {
-            color: #ffffff;
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* Active State for GALLERY */
-        nav a.active {
-            color: #ffffff;
-            background-color: #444444;
-            border-bottom: 3px solid #ffb7b2;
-        }
-
-        /* Main Content Card Box */
-        .container {
-            max-width: 1050px;
-            margin: 40px auto;
-            padding: 40px;
-            background-color: #ffffff; /* White Card Background */
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            text-align: center;
-        }
-
-        .container h1 {
-            font-size: 2rem;
-            color: #1a1a1a;
-            margin-bottom: 8px;
-            font-weight: 800;
-        }
-
-        .container p.subtitle {
-            font-size: 0.95rem;
-            color: #666666;
-            margin-bottom: 35px;
-        }
-
-        /* 4-Column Grid for 12 Circular Projects */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px 20px;
-            justify-items: center;
-        }
-
-        .gallery-item {
+        .main-wrapper {
+            flex: 1;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            padding: 40px 20px;
         }
 
-        /* Circular Image with Border */
-        .gallery-item img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #d4af37;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        .card {
+            background-color: #7d7775;
+            width: 100%;
+            max-width: 650px;
+            padding: 45px 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
-        /* Project Title under images */
-        .gallery-item span {
-            margin-top: 10px;
+        .card h1 {
+            font-size: 1.5rem;
+            letter-spacing: 1.5px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .card p.subtitle {
+            font-size: 0.88rem;
+            color: #f5f5f5;
+            margin-bottom: 25px;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: #f5f5f5;
+            margin-bottom: 30px;
+        }
+
+        .contact-info a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #d2968b;
+            color: #ffffff;
+            padding: 10px 28px;
+            border-radius: 20px;
+            text-decoration: none;
             font-weight: bold;
             font-size: 0.8rem;
             letter-spacing: 1px;
-            color: #333333;
+            transition: background 0.3s;
         }
 
-        /* Footer Styling */
+        .btn:hover {
+            background-color: #c18277;
+        }
+
         footer {
+            background-color: #c98a7e;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 0.85rem;
-            color: #555555;
+            padding: 12px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header with Logo and Stacked Navigation -->
     <header>
         <div class="brand-container">
             <img src="logo.png" alt="Logo">
-            <span> MIKAELLA'S CREATIVES</span>
+            <span>BACALA</span>
         </div>
         <nav>
-            <a href="#">HOME</a>
-            <a href="#">ABOUT</a>
-            <a href="#" class="active">GALLERY</a>
-            <a href="#">CONTACT</a>
+            <a href="home.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="index.html">GALLERY</a>
+            <a href="contact.html" class="active">CONTACT</a>
         </nav>
     </header>
 
-    <!-- Main Card Container -->
-    <div class="container">
-        <h1>Creative Portfolio</h1>
-        <p class="subtitle">A curated look at our latest collections and artistic ventures.</p>
-
-        <!-- 12 Items Grid -->
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="profile1.jpg" alt="Project 01">
-                <span>PROJECT 01</span>
-            </div>
-            <div class="gallery-item">
-                <img src="profile2.jpg" alt="Project 02">
-                <span>PROJECT 02</span>
-            </div>
-            <div class="gallery-item">
-                <img src="profile3.jpg" alt="Project 03">
-                <span>PROJECT 03</span>
-            </div>
-            <div class="gallery-item">
-                <img src="profile4.jpg" alt="Project 04">
-                <span>PROJECT 04</span>
+    <div class="main-wrapper">
+        <div class="card">
+            <h1>CONTACT US</h1>
+            <p class="subtitle">We would like to connect with you.</p>
+            
+            <div class="contact-info">
+                <p>Phone: <a href="tel:09611793940">09611793940</a></p>
+                <p>Location: Baguio City, Philippines</p>
+                <p>Follow us on social media</p>
             </div>
 
-            <div class="gallery-item">
-                <img src="profile5.jpg" alt="Project 05">
-                <span>PROJECT 05</span>
-            </div>
-            <div class="gallery-item">
-                <img src="profile6.jpg" alt="Project 06">
-                <span>PROJECT 06</span>
-            </div>
-            <div class="gallery-item">
-                <img src="profile7.jpg" alt="Project 07">
-                <span>PROJECT 07</span>
-            </div>
-            <div class="gallery-item">
-                <img src="profile8.jpg" alt="Project 08">
-                <span>PROJECT 08</span>
-            </div>
-
-            <div class="gallery-item">
-                <img src="profile9.jpg" alt="Project 09">
-                <span>PROJECT 09</span>
-            </div>
-            <div class="gallery-item">
-                <img src="profile10.jpg" alt="Project 10">
-                <span>PROJECT 10</span>
-            </div>
-            <div class="gallery-item">
-                <img src="profile11.jpg" alt="Project 11">
-                <span>PROJECT 11</span>
-            </div>
-            <div class="gallery-item">
-                <img src="profile12.jpg" alt="Project 12">
-                <span>PROJECT 12</span>
-            </div>
+            <a href="home.html" class="btn">RETURN HOME</a>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
-        &copy; 2026 Bacala's Creatives
+        2026 BACALA Creatives
     </footer>
 
+</body>
+</html>
 </body>
 </html>
