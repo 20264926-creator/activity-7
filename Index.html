@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio - Gallery</title>
+    <style>
+        /* Global Page Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d8f3dc; /* Mint Green Background */
+            color: #333333;
+        }
+
+        /* Top Navigation Bar */
+        nav {
+            background-color: #2b2b2b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: #b0b0b0;
+            text-decoration: none;
+            padding: 18px 28px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        /* Active State for GALLERY */
+        nav a.active {
+            color: #ffffff;
+            background-color: #444444;
+            border-bottom: 3px solid #ffb7b2; /* Soft Accent Highlight */
+        }
+
+        /* Main Section Container */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 2.2rem;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .container p.subtitle {
+            font-size: 1rem;
+            color: #555555;
+            margin-bottom: 40px;
+        }
+
+        /* 4-Column Grid for 12 Circular Projects */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 35px 20px;
+            justify-items: center;
+        }
+
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Circular Image with Border */
+        .gallery-item img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #d4af37; /* Gold/Accent border around circular image */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Project Title under images */
+        .gallery-item span {
+            margin-top: 12px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: #222222;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #111111;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="#" class="active">GALLERY</a>
+        <a href="#">CONTACT</a>
+    </nav>
+
+    <!-- Main Gallery Content -->
+    <div class="container">
+        <h1>Creative Portfolio</h1>
+        <p class="subtitle">A curated look at our latest collections and artistic ventures.</p>
+
+        <!-- 12 Items Grid -->
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/150" alt="Project 01">
+                <span>PROJECT 01</span>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/150" alt="Project 02">
+                <span>PROJECT 02</span>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/150" alt="Project 03">
+                <span>PROJECT 03</span>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/150" alt="Project 04">
+                <span>PROJECT 04</span>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/150" alt="Project 05">
+                <span>PROJECT 05</span>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/150" alt="Project 06">
+                <span>PROJECT 06</span>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/150" alt="Project 07">
+                <span>PROJECT 07</span>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/150" alt="Project 08">
+                <span>PROJECT 08</span>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/150" alt="Project 09">
+                <span>PROJECT 09</span>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/150" alt="Project 10">
+                <span>PROJECT 10</span>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/150" alt="Project 11">
+                <span>PROJECT 11</span>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/150" alt="Project 12">
+                <span>PROJECT 12</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 Bacala Mikaella Creatives
+    </footer>
+
+</body>
+</html>
